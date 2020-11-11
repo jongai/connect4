@@ -1,5 +1,19 @@
 import java.util.Scanner;
+
+/**
+ * The main class that contains the gameplay mechanics for connect 4 game.
+ *
+ * @author  Jonathan Gai
+ * @version 1.0
+ * @since   2020-11-10
+ */
+
 public class Main {
+	/**
+	 * The main method that uses Board class to play connect 4.
+	 *
+	 * @param args Not expected.
+	 */
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		String c = "y";
