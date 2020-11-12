@@ -9,6 +9,7 @@
 public class Board {
 
 	int[][] board = new int[6][7];
+	int count = 0;
 
 	/**
 	 * The add method that addes a disc belowing to the player specified to the row.
@@ -26,6 +27,7 @@ public class Board {
 		for (int i=0; i<6; i++) {
 			if (board[i][col] == 0) {
 				board[i][col] = player;
+				count++;
 				return 0;
 			}
 		}
@@ -50,9 +52,13 @@ public class Board {
 	 * The method that determines if there is a winner according to the board state.
 	 *
 	 * @return -1 if there is not winner.
+	 *         -2 if there is a draw.
 	 *         Player ID if there is a winner.
 	 */
 	public int winner() {
+		if (count >= 42) {
+			return -2;
+		}
 		for (int i=0; i<3; i++) {
 			for (int j=0; j<7; j++) {
 				if (board[i][j] != 0 && board[i][j] == board[i+1][j] && board[i+1][j] == board[i+2][j] && board[i+2][j] == board[i+3][j]) {

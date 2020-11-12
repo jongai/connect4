@@ -17,7 +17,7 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		String c = "y";
-		int player_count = 3;
+		int player_count = 2;
 		while(c.toLowerCase().equals("y")) {
 			Board b = new Board();
 			int player = 0;
@@ -35,7 +35,12 @@ public class Main {
 				b.print();
 				player = (player + 1) % player_count;
 			}
-			System.out.println(b.winner() + " wins");
+			if (b.winner() != -2) {
+				System.out.println(b.winner() + " wins");
+			}
+			else {
+				System.out.println("Draw");
+			}
 			System.out.println("Continue to play? (y/n)");
 			scan.nextLine();
 			c = scan.nextLine();
